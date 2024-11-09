@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
-//import localFont from "next/font/local";
+import StyledJsxRegistry from "./registry";
+import { Sen } from "next/font/google";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+const sen = Sen({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Fund Care",
-  description: "",
+  description: "Empowering Health, Enabling Impact",
 };
 
 export default function RootLayout({
@@ -23,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={sen.className}>
       <body>
-        {children}
+        <StyledJsxRegistry>{children}</StyledJsxRegistry>
       </body>
     </html>
   );
