@@ -13,7 +13,7 @@ const QuickFilter = ({ title, isSelected }: CampaignCardProps) => {
   const borderColor = isSelected ? "border-green-500" : "border-gray-500";
 
   // bg color
-  const backgroundColor = isSelected ? "bg-green-100" : "bg-gray-100";
+  const backgroundColor = isSelected ? "bg-green-100" : "bg-transparent";
 
   return (
     <div
