@@ -11,7 +11,8 @@ export default {
     extend: {
       backgroundImage: {
         "auth-background": "url('/images/auth-background.jpeg')",
-		"campaign-background": "url('/images/campaigns.png')",
+        "campaign-background": "url('/images/campaigns.png')",
+        "community-background": "url('/images/community.png')",
       },
       colors: {
         background: "hsl(var(--background))",
