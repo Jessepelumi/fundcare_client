@@ -1,12 +1,10 @@
 "use client";
 
+import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -15,9 +13,9 @@ import { useForm } from "react-hook-form";
 import { registerSchema } from "@/schema/register";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { CircleCheck } from "lucide-react";
 import PasswordStrength from "@/components/custom/passwordStrenght";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Register() {
   const [password, setPassword] = useState("");
@@ -53,8 +51,8 @@ export default function Register() {
   const isFormValid = form.formState.isValid && isPasswordValid;
 
   function onSubmit(values: z.infer<typeof registerSchema>) {
-    // Do something with the form values
     console.log(values);
+    redirect("/verify");
   }
 
   return (
@@ -166,7 +164,7 @@ export default function Register() {
             <Button
               type="submit"
               variant={"outline"}
-              className="text-mm w-full py-5"
+              className="!text-mm w-full py-5"
             >
               Create Account
             </Button>
@@ -184,9 +182,9 @@ export default function Register() {
       </Form>
       <div>
         <span className="text-mm">Already have an account? </span>
-        <a href="" className="text-mm text-green-500">
+        <Link href="/login" className="text-mm text-green-500">
           Sign in
-        </a>
+        </Link>
       </div>
     </div>
   );
