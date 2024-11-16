@@ -30,6 +30,7 @@ export default function Verify() {
   });
 
   function onSubmit(data: z.infer<typeof verifySchema>) {
+    console.log(data);
     redirect("/success");
   }
 
@@ -41,7 +42,7 @@ export default function Verify() {
       </div>
       <b className="pb-2">Verify Your Email Address</b>
       <p className="text-center w-3/4 text-mm pb-5">
-        We've sent a 6-digit verification code to your email. Please enter the
+        We&apos;ve sent a 6-digit verification code to your email. Please enter the
         code to complete your registration.
       </p>
 
@@ -102,7 +103,7 @@ export default function Verify() {
       </Form>
 
       <div>
-        <span className="text-mm">Didn't receive the code? </span>
+        <span className="text-mm">Didn&apos;t receive the code? </span>
         <a href="" className="text-mm text-green-500">
           Resend
         </a>

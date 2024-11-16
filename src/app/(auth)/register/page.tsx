@@ -52,6 +52,7 @@ export default function Register() {
 
   function onSubmit(values: z.infer<typeof registerSchema>) {
     console.log(values);
+    console.log("Password Entered:", password);
     redirect("/verify");
   }
 
@@ -64,7 +65,7 @@ export default function Register() {
       <b className="pb-2">Join the Fund Care Community</b>
       <p className="text-center w-3/4 text-mm pb-5">
         Create an account to support health causes, connect with professionals,
-        or fund your community's healthcare projects.
+        or fund your community&apos;s healthcare projects.
       </p>
       <Button variant={"outline"} className="!text-mm px-24 py-5">
         <img src="/images/google-icon.png" alt="google logo" /> Continue with

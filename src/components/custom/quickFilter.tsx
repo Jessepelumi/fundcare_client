@@ -1,5 +1,3 @@
-import { ChatCircle, ShareFat, ThumbsUp } from "@phosphor-icons/react/dist/ssr";
-
 interface CampaignCardProps {
   title: string;
   isSelected: boolean;

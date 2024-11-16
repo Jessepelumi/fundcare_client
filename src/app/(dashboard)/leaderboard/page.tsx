@@ -1,18 +1,6 @@
 import * as React from "react";
 
-import CampaignCard from "@/components/custom/campaignCard";
-import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { CaretRight } from "@phosphor-icons/react/dist/ssr";
-import FeedCard from "@/components/custom/feedCard";
 import QuickFilter from "@/components/custom/quickFilter";
 
 export default function Leaderboard() {

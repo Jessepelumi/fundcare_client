@@ -1,14 +1,9 @@
-import CampaignCard from "@/components/custom/campaignCard";
 import FeedCard from "@/components/custom/feedCard";
-import LeaderboardTile from "@/components/custom/leaderboardTile";
-import OverviewCard from "@/components/custom/overviewCard";
 import QuickFilter from "@/components/custom/quickFilter";
 import TrendingCampaignTile from "@/components/custom/trendingCampaignTile";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowUp,
   CaretRight,
-  DotsThreeVertical,
   Plus,
   X,
 } from "@phosphor-icons/react/dist/ssr";

@@ -1,6 +1,5 @@
 "use client";
 
-import { SquareUserRound } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -22,7 +21,9 @@ export default function Onboarding() {
     resolver: zodResolver(onboardingSchema),
   });
 
-  function onSubmit(data: z.infer<typeof onboardingSchema>) {}
+  function onSubmit(data: z.infer<typeof onboardingSchema>) {
+    console.log(data);
+  }
 
   return (
     <div className="h-screen flex flex-col items-center pt-16">
@@ -32,7 +33,7 @@ export default function Onboarding() {
       </div>
       <b className="pb-2">Welcome to Fund Care!</b>
       <p className="text-center w-1/4 !text-mm text-gray-400 pb-5">
-        Let's get started by slecting your role. This helps us personalize your
+        Let&apos;s get started by slecting your role. This helps us personalize your
         experience.
       </p>
 

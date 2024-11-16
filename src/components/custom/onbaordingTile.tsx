@@ -1,5 +1,3 @@
-import { SquareUserRound } from "lucide-react";
-
 interface OnboardingTileProps {
   role: string;
   about: string;

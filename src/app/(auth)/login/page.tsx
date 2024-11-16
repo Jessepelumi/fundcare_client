@@ -47,6 +47,7 @@ export default function Login() {
 
   function onSubmit(values: z.infer<typeof loginSchema>) {
     console.log(values);
+    console.log("Password Entered:", password);
     redirect("/home");
   }
 
@@ -153,7 +154,7 @@ export default function Login() {
         </form>
       </Form>
       <div>
-        <span className="text-mm">Don't have an account yet? </span>
+        <span className="text-mm">Don&apos;t have an account yet? </span>
         <Link href="/register" className="text-mm text-green-500">
           Create one
         </Link>

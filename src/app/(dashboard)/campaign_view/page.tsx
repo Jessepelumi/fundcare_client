@@ -75,7 +75,7 @@ export default function CampaignView() {
           <div className="border px-3 py-1 w-fit rounded-xl">
             <h3 className="!text-mm text-gray-500">Impact Statement</h3>
             <span className="text-md font-semibold">
-              "Every ₦5,000 donated provides clean water to one household."
+            &quot;Every ₦5,000 donated provides clean water to one household.&quot;
             </span>
           </div>
           <div className="pb-3"></div>

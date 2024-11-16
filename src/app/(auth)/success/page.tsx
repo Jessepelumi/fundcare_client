@@ -18,7 +18,7 @@ export default function Success() {
       </div>
       <b className="pb-2">Email Verified Successfully!</b>
       <p className="text-center w-3/4 text-mm pb-5">
-        Your email has been verified, and your account is now active. You're all
+        Your email has been verified, and your account is now active. You&apos;re all
         set to start supporting and managing health initiatives on Fund Care.
       </p>
 
