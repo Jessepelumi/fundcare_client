@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { SidebarItem } from "./sidebarItem";
 import {
@@ -22,12 +24,20 @@ export const Sidebar = () => {
         </div>
 
         <nav className="flex flex-col gap-3">
-          <SidebarItem icon={House} text="Home" />
-          <SidebarItem icon={NotePencil} text="Campaigns" />
-          <SidebarItem icon={HeartStraight} text="Community" />
-          <SidebarItem icon={ChartPieSlice} text="Impact Report" />
-          <SidebarItem icon={ChartBar} text="Leaderboard" />
-          <SidebarItem icon={BellSimple} text="Notification" />
+          <SidebarItem icon={House} text="Home" href="/home" />
+          <SidebarItem icon={NotePencil} text="Campaigns" href="/campaigns" />
+          <SidebarItem icon={HeartStraight} text="Community" href="community" />
+          <SidebarItem
+            icon={ChartPieSlice}
+            text="Impact Report"
+            href="impact"
+          />
+          <SidebarItem icon={ChartBar} text="Leaderboard" href="leaderboard" />
+          <SidebarItem
+            icon={BellSimple}
+            text="Notification"
+            href="notification"
+          />
         </nav>
       </div>
 
