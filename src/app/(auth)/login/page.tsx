@@ -1,17 +1,160 @@
+"use client";
 
+import { Button } from "@/components/ui/button";
+import { Form, FormField, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useForm } from "react-hook-form";
+import { loginSchema } from "@/schema/login";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useState } from "react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function Login() {
+  const [password, setPassword] = useState("");
+  const [criteria, setCriteria] = useState({
+    minLength: false,
+    uppercase: false,
+    lowercase: false,
+    number: false,
+    specialChar: false,
+  });
+
+  const form = useForm<z.infer<typeof loginSchema>>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const handlePasswordChange = (value: string) => {
+    setPassword(value);
+    setCriteria({
+      minLength: value.length >= 8,
+      uppercase: /[A-Z]/.test(value),
+      lowercase: /[a-z]/.test(value),
+      number: /\d/.test(value),
+      specialChar: /[!@#$%^&*]/.test(value),
+    });
+  };
+
+  const isPasswordValid = Object.values(criteria).every(Boolean);
+  const isFormValid = form.formState.isValid && isPasswordValid;
+
+  function onSubmit(values: z.infer<typeof loginSchema>) {
+    // Do something with the form values
+    console.log(values);
+  }
+
   return (
-    <div className="bg-slate-600 w-full h-full p-1 flex flex-col items-center overflow-scroll">
+    <div className="w-full h-full p-1 flex flex-col items-center overflow-scroll">
       <div className="flex items-center pb-4">
         <img src="/images/logo-green.png" alt="logo" className="pr-2" />
         <b className="text-md">Fund Care</b>
       </div>
-      <b className="pb-2">Join the Fund Care Community</b>
-      <p className="text-center w-3/4 text-smd">
-        Create an account to support health causes, connect with professionals,
-        or fund your community's healthcare projects.
+      <b className="pb-2">Welcome Back to Fund Care</b>
+      <p className="text-center w-3/4 text-mm pb-5">
+        Log in to continue supporting health causes or managing your projects.
       </p>
+      <Button variant={"outline"} className="!text-mm px-24 py-5">
+        <img src="/images/google-icon.png" alt="google logo" /> Continue with
+        Google
+      </Button>
+      <div className="p-3 flex items-center gap-2 w-full max-w-sm">
+        <div className="flex-grow h-px bg-gray-400"></div>
+        <span className="text-mm text-gray-600">OR</span>
+        <div className="flex-grow h-px bg-gray-400"></div>
+      </div>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="grid w-full max-w-sm items-center gap-1.5 pb-3"
+        >
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <div className="grid w-full max-w-sm items-center gap-1.5 pb-3">
+                <Label htmlFor="password" className="!text-mm">
+                  Email
+                </Label>
+                <Input
+                  type="email"
+                  id="email"
+                  placeholder="john.smith@fundcare.com"
+                  {...field}
+                  className="!text-mm"
+                />
+                <FormMessage className="text-sm" />
+              </div>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <div className="grid w-full max-w-sm items-center gap-1.5 pb-0">
+                <Label htmlFor="password" className="!text-mm">
+                  Password
+                </Label>
+                <Input
+                  type="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  {...field}
+                  className="!text-mm"
+                  onChange={(e) => {
+                    field.onChange(e);
+                    handlePasswordChange(e.target.value);
+                  }}
+                />
+              </div>
+            )}
+          />
+
+          <div className="flex justify-between py-2">
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms2" disabled />
+              <label
+                htmlFor="terms2"
+                className="!text-mm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Stay signed in
+              </label>
+            </div>
+
+            <a href="" className="text-mm text-green-500">
+              Forgot Password?
+            </a>
+          </div>
+
+          {isFormValid ? (
+            <Button
+              type="submit"
+              variant={"outline"}
+              className="text-mm w-full py-5"
+            >
+              Create Account
+            </Button>
+          ) : (
+            <Button
+              type="button"
+              variant={"secondary"}
+              className="!text-mm text-gray-400 w-full py-5"
+            >
+              Log in
+            </Button>
+          )}
+        </form>
+      </Form>
+      <div>
+        <span className="text-mm">Don't have an account yet? </span>
+        <a href="" className="text-mm text-green-500">
+          Create one
+        </a>
+      </div>
     </div>
   );
 }
