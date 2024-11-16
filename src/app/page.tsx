@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <div>
-      <h1>Fund Care</h1>
-    </div>
-  );
+import { redirect } from "next/navigation";
+
+export default function AppHome() {
+  redirect("/login");
 }
