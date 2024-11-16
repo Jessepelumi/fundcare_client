@@ -1,5 +1,6 @@
 "use client";
 
+import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Form, FormField, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -10,6 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
 
 export default function Login() {
   const [password, setPassword] = useState("");
@@ -44,8 +46,8 @@ export default function Login() {
   const isFormValid = form.formState.isValid && isPasswordValid;
 
   function onSubmit(values: z.infer<typeof loginSchema>) {
-    // Do something with the form values
     console.log(values);
+    redirect("/home");
   }
 
   return (
@@ -134,15 +136,16 @@ export default function Login() {
             <Button
               type="submit"
               variant={"outline"}
-              className="text-mm w-full py-5"
+              className="!text-mm w-full py-5"
             >
-              Create Account
+              Log in
             </Button>
           ) : (
             <Button
               type="button"
               variant={"secondary"}
-              className="!text-mm text-gray-400 w-full py-5"
+              className="!text-mm w-full py-5"
+              disabled
             >
               Log in
             </Button>
@@ -151,9 +154,9 @@ export default function Login() {
       </Form>
       <div>
         <span className="text-mm">Don't have an account yet? </span>
-        <a href="" className="text-mm text-green-500">
+        <Link href="/register" className="text-mm text-green-500">
           Create one
-        </a>
+        </Link>
       </div>
     </div>
   );
