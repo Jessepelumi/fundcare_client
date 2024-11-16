@@ -7,6 +7,7 @@ interface CampaignCardProps {
   amount: string;
   isIncreased: boolean;
   isMaintained: boolean;
+  duration: string;
 }
 
 const OverviewCard = ({
@@ -16,6 +17,7 @@ const OverviewCard = ({
   amount,
   isIncreased,
   isMaintained,
+  duration,
 }: CampaignCardProps) => {
   // icon color
   const Icon = isIncreased ? (
@@ -63,7 +65,7 @@ const OverviewCard = ({
             {isMonetaryValue ? `₦${amount}` : amount}
           </span>
         </div>
-        <span className="text-mm">in 24h</span>
+        <span className="text-mm">in {duration}</span>
       </div>
     </div>
   );
