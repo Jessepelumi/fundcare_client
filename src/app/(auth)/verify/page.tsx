@@ -20,6 +20,7 @@ import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import Image from "next/image";
 
 export default function Verify() {
   const form = useForm<z.infer<typeof verifySchema>>({
@@ -36,8 +37,8 @@ export default function Verify() {
 
   return (
     <div className="w-full h-full p-1 flex flex-col items-center overflow-scroll">
-      <div className="flex items-center pb-4">
-        <img src="/images/logo-green.png" alt="logo" className="pr-2" />
+      <div className="flex items-center gap-2 pb-4">
+        <Image src="/images/logo-green.png" alt="logo" height={25} width={25} />
         <b className="text-md">Fund Care</b>
       </div>
       <b className="pb-2">Verify Your Email Address</b>

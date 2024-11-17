@@ -16,6 +16,7 @@ import { z } from "zod";
 import PasswordStrength from "@/components/custom/passwordStrenght";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Register() {
   const [password, setPassword] = useState("");
@@ -58,8 +59,8 @@ export default function Register() {
 
   return (
     <div className="w-full h-full p-1 flex flex-col items-center overflow-scroll">
-      <div className="flex items-center pb-4">
-        <img src="/images/logo-green.png" alt="logo" className="pr-2" />
+      <div className="flex items-center gap-2 pb-4">
+        <Image src="/images/logo-green.png" alt="logo" height={25} width={25} />
         <b className="text-md">Fund Care</b>
       </div>
       <b className="pb-2">Join the Fund Care Community</b>
@@ -68,7 +69,7 @@ export default function Register() {
         or fund your community&apos;s healthcare projects.
       </p>
       <Button variant={"outline"} className="!text-mm px-24 py-5">
-        <img src="/images/google-icon.png" alt="google logo" /> Continue with
+        <Image src="/images/google-icon.png" alt="google logo" height={20} width={20} /> Continue with
         Google
       </Button>
       <div className="p-3 flex items-center gap-2 w-full max-w-sm">

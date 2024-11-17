@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Success() {
   const router = useRouter();
@@ -12,8 +13,8 @@ export default function Success() {
 
   return (
     <div className="w-full h-full px-1 py-20 flex flex-col items-center overflow-scroll">
-      <div className="flex items-center pb-4">
-        <img src="/images/logo-green.png" alt="logo" className="pr-2" />
+      <div className="flex items-center gap-2 pb-4">
+        <Image src="/images/logo-green.png" alt="logo" height={25} width={25} />
         <b className="text-md">Fund Care</b>
       </div>
       <b className="pb-2">Email Verified Successfully!</b>

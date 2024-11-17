@@ -12,6 +12,7 @@ import { z } from "zod";
 import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Login() {
   const [password, setPassword] = useState("");
@@ -53,8 +54,8 @@ export default function Login() {
 
   return (
     <div className="w-full h-full p-1 flex flex-col items-center overflow-scroll">
-      <div className="flex items-center pb-4">
-        <img src="/images/logo-green.png" alt="logo" className="pr-2" />
+      <div className="flex items-center gap-2 pb-4">
+        <Image src="/images/logo-green.png" alt="logo" height={25} width={25}/>
         <b className="text-md">Fund Care</b>
       </div>
       <b className="pb-2">Welcome Back to Fund Care</b>
@@ -62,7 +63,7 @@ export default function Login() {
         Log in to continue supporting health causes or managing your projects.
       </p>
       <Button variant={"outline"} className="!text-mm px-24 py-5">
-        <img src="/images/google-icon.png" alt="google logo" /> Continue with
+        <Image src="/images/google-icon.png" alt="google logo" height={20} width={20} /> Continue with
         Google
       </Button>
       <div className="p-3 flex items-center gap-2 w-full max-w-sm">
