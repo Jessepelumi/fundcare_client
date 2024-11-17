@@ -15,6 +15,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { onboardingSchema } from "@/schema/onboarding";
 import OnboardingTile from "@/components/custom/onbaordingTile";
+import Image from "next/image";
 
 export default function Onboarding() {
   const form = useForm<z.infer<typeof onboardingSchema>>({
@@ -27,8 +28,8 @@ export default function Onboarding() {
 
   return (
     <div className="h-screen flex flex-col items-center pt-16">
-      <div className="flex items-center pb-4">
-        <img src="/images/logo-green.png" alt="logo" className="pr-2" />
+      <div className="flex items-center gap-2 pb-4">
+        <Image src="/images/logo-green.png" alt="logo" height={25} width={25} />
         <b className="text-md">Fund Care</b>
       </div>
       <b className="pb-2">Welcome to Fund Care!</b>
