@@ -129,9 +129,9 @@ export default function Login() {
               </label>
             </div>
 
-            <a href="" className="text-mm text-green-500">
+            <Link href="/reset" className="text-mm text-green-500">
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           {isFormValid ? (
