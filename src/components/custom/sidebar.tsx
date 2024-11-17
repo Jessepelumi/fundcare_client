@@ -13,13 +13,14 @@ import {
   Question,
   SignOut,
 } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
 
 export const Sidebar = () => {
   return (
     <section className="h-screen w-1/5 px-5 py-10 border-r flex flex-col justify-between">
       <div>
-        <div className="flex items-center pb-10">
-          <img src="/images/logo-green.png" alt="logo" className="pr-2" />
+        <div className="flex items-center gap-2 pb-10">
+          <Image src="/images/logo-green.png" alt="logo" height={25} width={25} />
           <b className="text-md text-green-500 cursor-default">Fund Care</b>
         </div>
 
