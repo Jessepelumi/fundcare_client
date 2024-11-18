@@ -10,12 +10,7 @@ import {
 } from "@/components/ui/input-otp";
 import { verifySchema } from "@/schema/verify";
 
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -28,6 +23,7 @@ export default function Verify() {
     defaultValues: {
       pin: "",
     },
+    mode: "onChange",
   });
 
   function onSubmit(data: z.infer<typeof verifySchema>) {
@@ -43,8 +39,8 @@ export default function Verify() {
       </div>
       <b className="pb-2">Verify Your Email Address</b>
       <p className="text-center w-3/4 text-mm pb-5">
-        We&apos;ve sent a 6-digit verification code to your email. Please enter the
-        code to complete your registration.
+        We&apos;ve sent a 6-digit verification code to your email. Please enter
+        the code to complete your registration.
       </p>
 
       <Form {...form}>
@@ -97,9 +93,24 @@ export default function Verify() {
           />
           <div className="pb-2"></div>
 
-          <Button type="submit" variant={"secondary"} className="!text-mm py-5">
-            Continue
-          </Button>
+          {form.formState.isValid ? (
+            <Button
+              type="submit"
+              variant={"outline"}
+              className="!text-mm text-white py-5 bg-green-500 hover:bg-green-400 hover:text-white"
+            >
+              Continue
+            </Button>
+          ) : (
+            <Button
+              type="submit"
+              variant={"secondary"}
+              className="!text-mm py-5"
+              disabled
+            >
+              Continue
+            </Button>
+          )}
         </form>
       </Form>
 
