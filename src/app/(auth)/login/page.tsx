@@ -55,7 +55,7 @@ export default function Login() {
   return (
     <div className="w-full h-full p-1 flex flex-col items-center overflow-scroll">
       <div className="flex items-center gap-2 pb-4">
-        <Image src="/images/logo-green.png" alt="logo" height={25} width={25}/>
+        <Image src="/images/logo-green.png" alt="logo" height={25} width={25} />
         <b className="text-md">Fund Care</b>
       </div>
       <b className="pb-2">Welcome Back to Fund Care</b>
@@ -63,8 +63,13 @@ export default function Login() {
         Log in to continue supporting health causes or managing your projects.
       </p>
       <Button variant={"outline"} className="!text-mm px-24 py-5">
-        <Image src="/images/google-icon.png" alt="google logo" height={20} width={20} /> Continue with
-        Google
+        <Image
+          src="/images/google-icon.png"
+          alt="google logo"
+          height={20}
+          width={20}
+        />{" "}
+        Continue with Google
       </Button>
       <div className="p-3 flex items-center gap-2 w-full max-w-sm">
         <div className="flex-grow h-px bg-gray-400"></div>
@@ -138,7 +143,7 @@ export default function Login() {
             <Button
               type="submit"
               variant={"outline"}
-              className="!text-mm w-full py-5"
+              className="!text-mm text-white w-full py-5 bg-green-500 hover:bg-green-400 hover:text-white"
             >
               Log in
             </Button>

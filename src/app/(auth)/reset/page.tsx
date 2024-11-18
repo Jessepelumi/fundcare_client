@@ -67,7 +67,7 @@ export default function ResetPassword() {
             <Button
               type="submit"
               variant={"outline"}
-              className="!text-mm text-white w-full py-5 bg-green-500"
+              className="!text-mm text-white w-full py-5 bg-green-500 hover:bg-green-400 hover:text-white"
             >
               Reset Password
             </Button>

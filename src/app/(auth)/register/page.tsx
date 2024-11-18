@@ -2,11 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormField,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormField, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
@@ -35,6 +31,7 @@ export default function Register() {
       email: "",
       password: "",
     },
+    mode: "onSubmit",
   });
 
   const handlePasswordChange = (value: string) => {
@@ -43,9 +40,11 @@ export default function Register() {
       minLength: value.length >= 8,
       uppercase: /[A-Z]/.test(value),
       lowercase: /[a-z]/.test(value),
-      number: /\d/.test(value),
-      specialChar: /[!@#$%^&*]/.test(value),
+      number: /[0-9]/.test(value),
+      specialChar: /\W/.test(value),
     });
+
+    form.trigger("password");
   };
 
   const isPasswordValid = Object.values(criteria).every(Boolean);
@@ -69,8 +68,13 @@ export default function Register() {
         or fund your community&apos;s healthcare projects.
       </p>
       <Button variant={"outline"} className="!text-mm px-24 py-5">
-        <Image src="/images/google-icon.png" alt="google logo" height={20} width={20} /> Continue with
-        Google
+        <Image
+          src="/images/google-icon.png"
+          alt="google logo"
+          height={20}
+          width={20}
+        />{" "}
+        Continue with Google
       </Button>
       <div className="p-3 flex items-center gap-2 w-full max-w-sm">
         <div className="flex-grow h-px bg-gray-400"></div>
@@ -166,7 +170,7 @@ export default function Register() {
             <Button
               type="submit"
               variant={"outline"}
-              className="!text-mm w-full py-5"
+              className="!text-mm text-white w-full py-5 bg-green-500 hover:bg-green-400 hover:text-white"
             >
               Create Account
             </Button>
