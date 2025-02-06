@@ -72,10 +72,10 @@ export default function Support() {
           <div className="pb-3"></div>
 
           <h3 className="!text-mm text-gray-500 pb-2">Contact Support</h3>
-          <div className="flex items-center justify-between w-full border p-3 rounded-xl">
+          <button className="flex items-center justify-between w-full border p-3 rounded-xl">
             <p className="text-mm">Send us an email: support@fundcare.com</p>
             <CaretRight size={14} weight="bold" />
-          </div>
+          </button>
         </section>
       </div>
     </section>
