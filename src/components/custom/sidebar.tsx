@@ -56,12 +56,12 @@ export const Sidebar = () => {
         <SidebarSubItem icon={Question} text="Help & Support" href="/support" />
         <SidebarSubItem icon={Gear} text="Settings" href="/settings" />
 
-        <Link href={""}>
+        <button>
           <div className="flex items-center gap-3 bg-red-50 rounded-lg p-2 hover:bg-red-100">
             <SignOut size={20} className="text-red-500" />
             <p className="!text-mm text-red-500">Logout</p>
           </div>
-        </Link>
+        </button>
       </div>
     </section>
   );
