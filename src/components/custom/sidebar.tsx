@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { SidebarItem } from "./sidebarItem";
 import {
   House,
