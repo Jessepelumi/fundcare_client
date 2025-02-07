@@ -6,6 +6,7 @@ import {
   ArrowUp,
   CaretRight,
   DotsThreeVertical,
+  Plus,
   X,
 } from "@phosphor-icons/react/dist/ssr";
 
@@ -34,9 +35,15 @@ export default function Home() {
           </div>
           <h2 className="text-lg">Dashboard Overview</h2>
         </div>
-        <Button className="bg-green-500 hover:bg-green-400 !text-mm">
-          Explore Campaigns
-        </Button>
+        <div className="flex gap-2">
+          <Button variant="outline" className="!text-mm">
+            Create Campaign
+            <Plus />
+          </Button>
+          <Button className="bg-green-500 hover:bg-green-400 !text-mm">
+            Explore Campaigns
+          </Button>
+        </div>
       </div>
 
       <div className="flex gap-4 h-full overflow-hidden justify-between">
