@@ -1,5 +1,19 @@
 import { Sidebar } from "@/components/custom/sidebar";
-import { Bell, Search, CircleUserRound, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Bell, Search, ChevronDown } from "lucide-react";
 
 export default function DashboardLayout({
   children,
@@ -16,22 +30,68 @@ export default function DashboardLayout({
             <p className="text-md">Team Payaza</p>
           </div>
           <div className="flex gap-2">
-            <div>
-              <div className="border rounded-3xl w-fit p-2">
-                <Search size={18} />
-              </div>
-            </div>
-            <div>
-              <div className="border rounded-3xl w-fit p-2">
-                <Bell size={18} />
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center border rounded-3xl w-fit p-2">
-                <CircleUserRound size={18} />
-                <ChevronDown size={18} />
-              </div>
-            </div>
+            <Button variant="outline" size="icon" className="rounded-3xl">
+              <Search size={18} />
+            </Button>
+            <Button variant="outline" size="icon" className="rounded-3xl">
+              <Bell size={18} />
+            </Button>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="rounded-3xl px-2">
+                  <div className="h-6 w-6 bg-gray-400 rounded-3xl"></div>
+                  <ChevronDown size={18} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel className="!text-mm">
+                  Manage Account
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem className="!text-mm">
+                    Profile
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="!text-mm">
+                    Billing
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger className="!text-mm">
+                      Invite users
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuPortal>
+                      <DropdownMenuSubContent>
+                        <DropdownMenuItem className="!text-mm">
+                          Email
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="!text-mm">
+                          Message
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem className="!text-mm">
+                          More...
+                        </DropdownMenuItem>
+                      </DropdownMenuSubContent>
+                    </DropdownMenuPortal>
+                  </DropdownMenuSub>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="!text-mm">
+                  Settings
+                </DropdownMenuItem>
+                <DropdownMenuItem className="!text-mm">
+                  Support
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="!text-mm text-red-500">
+                  Log out
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </header>
         <aside className="flex flex-grow h-full overflow-hidden px-5 pt-5">
