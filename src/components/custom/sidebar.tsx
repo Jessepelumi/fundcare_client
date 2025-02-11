@@ -6,7 +6,6 @@ import {
   BellSimple,
   ChartBar,
   ChartPieSlice,
-  Gear,
   HeartStraight,
   NotePencil,
   Question,
@@ -53,7 +52,6 @@ export const Sidebar = () => {
 
       <div className="flex flex-col gap-3">
         <SidebarSubItem icon={Question} text="Help & Support" href="/support" />
-        <SidebarSubItem icon={Gear} text="Settings" href="/settings" />
 
         <button>
           <div className="flex items-center gap-3 bg-red-50 rounded-lg p-2 hover:bg-red-100">
