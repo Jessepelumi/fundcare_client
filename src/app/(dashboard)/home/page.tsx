@@ -2,13 +2,7 @@ import CampaignCard from "@/components/custom/campaignCard";
 import LeaderboardTile from "@/components/custom/leaderboardTile";
 import OverviewCard from "@/components/custom/overviewCard";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowUp,
-  CaretRight,
-  DotsThreeVertical,
-  Plus,
-  X,
-} from "@phosphor-icons/react/dist/ssr";
+import { CaretRight, Plus, X } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
   return (
@@ -27,7 +21,7 @@ export default function Home() {
       </header>
       <div className="pb-4"></div>
 
-      <div className="flex justify-between items-end pb-5">
+      <div className="lg:flex justify-between items-end pb-5">
         <div>
           <div className="flex gap-3 items-center">
             <span className="!text-mm">Fund Care</span>
@@ -35,6 +29,7 @@ export default function Home() {
           </div>
           <h2 className="text-lg">Dashboard Overview</h2>
         </div>
+        <div className="p-1 lg:hidden"></div>
         <div className="flex gap-2">
           <Button variant="outline" className="!text-mm">
             Create Campaign
@@ -46,10 +41,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex gap-4 h-full overflow-hidden justify-between">
+      <div className="lg:flex gap-4 h-full lg:overflow-hidden justify-between">
         <section className="flex flex-col overflow-y-auto pb-3">
           <h3 className="!text-mm text-gray-500 pb-2">Overview</h3>
-          <div className="flex gap-3">
+          <div className="flex flex-col lg:flex-row gap-3">
             <OverviewCard
               title="Total Donations Made"
               value="600,150.00"
@@ -79,7 +74,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid lg:grid-cols-2 gap-2">
             <CampaignCard
               title="Clean Water for Abeokuta Community"
               summary="Providing essential clean water to underserved clinics in rural areas to improve patient care."
@@ -97,50 +92,7 @@ export default function Home() {
               percentage="75"
             />
           </div>
-
           <div className="pb-3"></div>
-
-          <div className="flex justify-between items-center">
-            <h3 className="!text-mm text-gray-500 pb-2">Donation History</h3>
-            <Button variant={"outline"} className="!text-mm">
-              See all
-            </Button>
-          </div>
-          <div className="flex gap-3">
-            <div className="border rounded-xl p-2 min-w-60">
-              <div className="flex justify-between items-center pb-3">
-                <span className="!text-mm text-gray-500">
-                  Total Donations Made
-                </span>
-                <DotsThreeVertical weight="bold" />
-              </div>
-              <p className="text-lg">₦600,253.00</p>
-              <div className="flex gap-1 items-center">
-                <div className="flex gap-1 items-center border border-green-500 bg-green-100 px-1 rounded-xl">
-                  <ArrowUp size={14} color="green" />
-                  <span className="text-mm text-green-500">₦36,000</span>
-                </div>
-                <span className="text-mm">in 24h</span>
-              </div>
-            </div>
-
-            <div className="border rounded-xl p-2 min-w-60">
-              <div className="flex justify-between items-center pb-3">
-                <span className="!text-mm text-gray-500">
-                  Total Campaigns Supported
-                </span>
-                <DotsThreeVertical weight="bold" />
-              </div>
-              <p className="text-lg">24</p>
-              <div className="flex gap-1 items-center">
-                <div className="flex gap-1 items-center border border-red-500 bg-red-100 px-1 rounded-xl">
-                  <ArrowUp size={14} color="red" />
-                  <span className="text-mm text-red-500">24</span>
-                </div>
-                <span className="text-mm">in 7d</span>
-              </div>
-            </div>
-          </div>
         </section>
 
         <aside className="flex flex-col flex-none overflow-y-auto pb-3">
