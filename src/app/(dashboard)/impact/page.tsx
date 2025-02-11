@@ -1,6 +1,5 @@
 import * as React from "react";
 
-import CampaignCard from "@/components/custom/campaignCard";
 import { CaretRight } from "@phosphor-icons/react/dist/ssr";
 import OverviewCard from "@/components/custom/overviewCard";
 
@@ -18,7 +17,7 @@ export default function ImpactReport() {
       <div className="flex h-full overflow-hidden">
         <section className="flex flex-col overflow-y-auto pb-3">
           <h3 className="!text-mm text-gray-500 pb-2">Donations Summary</h3>
-          <div className="flex gap-3">
+          <div className="flex flex-col lg:flex-row gap-3">
             <OverviewCard
               title="Total Donations Made"
               value="1,600,150.00"
@@ -50,7 +49,7 @@ export default function ImpactReport() {
 
           <h3 className="!text-mm text-gray-500 py-3">Impact Metrics</h3>
 
-          <div className="grid grid-cols-3 gap-2">
+          {/* <div className="grid grid-cols-3 gap-2">
             <CampaignCard
               title="Clean Water for Abeokuta Community"
               summary="Providing essential clean water to underserved clinics in rural areas to improve patient care."
@@ -75,11 +74,13 @@ export default function ImpactReport() {
               amountRaised="1,250,000"
               percentage="75"
             />
-          </div>
+          </div> */}
 
-          <h3 className="!text-mm text-gray-500 py-3">Impact Stories</h3>
+          <h3 className="!text-mm text-gray-500 py-3">
+            Project Impact Stories
+          </h3>
 
-          <div className="grid grid-cols-3 gap-2">
+          {/* <div className="grid grid-cols-3 gap-2">
             <CampaignCard
               title="Clean Water for Abeokuta Community"
               summary="Providing essential clean water to underserved clinics in rural areas to improve patient care."
@@ -104,7 +105,7 @@ export default function ImpactReport() {
               amountRaised="1,250,000"
               percentage="75"
             />
-          </div>
+          </div> */}
         </section>
       </div>
     </section>
