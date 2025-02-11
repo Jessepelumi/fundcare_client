@@ -16,7 +16,7 @@ import { SidebarSubItem } from "./sidebarSubItem";
 
 export const Sidebar = () => {
   return (
-    <section className="h-screen w-1/5 px-5 py-10 border-r flex flex-col justify-between">
+    <section className="hidden h-screen w-1/5 px-5 py-10 border-r lg:flex flex-col justify-between">
       <div>
         <div className="flex items-center gap-2 pb-10">
           <Image
