@@ -15,7 +15,7 @@ import { CaretRight } from "@phosphor-icons/react/dist/ssr";
 export default function Campaigns() {
   return (
     <section className="flex flex-col h-full w-full overflow-scroll">
-      <div className="flex justify-between items-end pb-5">
+      <div className="lg:flex justify-between items-end pb-5">
         <div>
           <div className="flex gap-3 items-center">
             <span className="!text-mm">Fund Care</span>
@@ -23,7 +23,7 @@ export default function Campaigns() {
           </div>
           <h2 className="text-lg">Explore all Campaigns</h2>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col lg:items-end">
           <span className="!text-mm text-gray-500 pb-1">Filter by:</span>
           <Select>
             <SelectTrigger className="w-fit gap-3 !text-mm focus:border-green-500 focus:ring-0 focus:ring-green-500">
@@ -48,7 +48,7 @@ export default function Campaigns() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid lg:grid-cols-3 gap-2">
             <CampaignCard
               title="Clean Water for Abeokuta Community"
               summary="Providing essential clean water to underserved clinics in rural areas to improve patient care."
@@ -84,7 +84,7 @@ export default function Campaigns() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid lg:grid-cols-3 gap-2">
             <CampaignCard
               title="Clean Water for Abeokuta Community"
               summary="Providing essential clean water to underserved clinics in rural areas to improve patient care."
