@@ -25,7 +25,7 @@ export default function Community() {
       </header>
       <div className="pb-4"></div>
 
-      <div className="flex justify-between items-end pb-5">
+      <div className="lg:flex justify-between items-end pb-5">
         <div>
           <div className="flex gap-3 items-center">
             <span className="!text-mm">Fund Care</span>
@@ -33,13 +33,14 @@ export default function Community() {
           </div>
           <h2 className="text-lg">Community Feed</h2>
         </div>
+        <div className="p-1 lg:hidden"></div>
         <Button className="bg-green-500 hover:bg-green-400 !text-mm">
           Create a Post
           <Plus weight="bold" />
         </Button>
       </div>
 
-      <div className="flex gap-4 h-full overflow-hidden justify-between">
+      <div className="lg:flex gap-4 h-full lg:overflow-hidden justify-between">
         <section className="flex flex-col overflow-y-auto pb-3">
           <h3 className="!text-mm text-gray-500 pb-2">Quick filters:</h3>
           <div className="flex gap-2 flex-wrap">
@@ -60,7 +61,7 @@ export default function Community() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid lg:grid-cols-2 gap-2">
             <FeedCard
               title="Project Milestone Reached"
               summary="We did it! Thanks to your incredible support, the 'Clean Water for Abeokuta Community' project has surpassed its funding goal, providing clean drinking water to over "
@@ -95,6 +96,7 @@ export default function Community() {
             />
           </div>
         </section>
+        <div className="p-1 lg:hidden"></div>
 
         <aside className="flex flex-col flex-none overflow-y-auto pb-3">
           <h3 className="!text-mm text-gray-500 pb-2">Trending Campaigns</h3>
