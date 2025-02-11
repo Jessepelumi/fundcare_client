@@ -1,3 +1,5 @@
+"use client";
+
 import { Sidebar } from "@/components/custom/sidebar";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,12 +16,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Bell, Search, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   return (
     <section className="flex h-screen">
       <Sidebar />
@@ -37,11 +42,19 @@ export default function DashboardLayout({
               <Bell size={18} />
             </Button>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="rounded-3xl px-2">
+            <DropdownMenu onOpenChange={(open) => setIsDropdownOpen(open)}>
+              <DropdownMenuTrigger asChild className="ring-0 outline-none">
+                <Button
+                  variant="outline"
+                  className="rounded-3xl px-2 focus-visible:border-green-500"
+                >
                   <div className="h-6 w-6 bg-gray-400 rounded-3xl"></div>
-                  <ChevronDown size={18} />
+                  <ChevronDown
+                    size={18}
+                    className={`transition-transform duration-200 ${
+                      isDropdownOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                  />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
