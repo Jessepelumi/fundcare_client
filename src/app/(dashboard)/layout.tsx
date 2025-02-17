@@ -1,6 +1,6 @@
 "use client";
 
-import { Sidebar } from "@/components/custom/sidebar";
+import { MobileSidebar, Sidebar } from "@/components/custom/sidebar";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,6 +15,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { List } from "@phosphor-icons/react/dist/ssr";
 import { Bell, Search, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -24,15 +25,30 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <section className="flex h-screen">
       <Sidebar />
+      <MobileSidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
       <section className="flex flex-col w-full">
         <header className="flex justify-between items-center p-3 border-b">
-          <div>
-            <p className="text-mm text-gray-400">Welcome,</p>
-            <p className="text-md">Team Payaza</p>
+          <div className="flex gap-3 items-center">
+            <Button
+              variant="outline"
+              size="icon"
+              className="rounded-3xl lg:hidden"
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            >
+              <List size={18} />
+            </Button>
+            <div>
+              <p className="text-mm text-gray-400">Welcome,</p>
+              <p className="text-md">Team Payaza</p>
+            </div>
           </div>
           <div className="flex gap-2">
             <Button variant="outline" size="icon" className="rounded-3xl">
