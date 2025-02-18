@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import { SidebarSubItem } from "./sidebarSubItem";
 import { useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export const Sidebar = () => {
   return (
@@ -73,7 +73,7 @@ interface MobileSidebarProps {
 
 export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -96,7 +96,7 @@ export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
 
   useEffect(() => {
     onClose();
-  }, [router]);
+  }, [pathname, onClose]);
 
   return (
     <section
