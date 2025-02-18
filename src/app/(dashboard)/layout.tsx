@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { List } from "@phosphor-icons/react/dist/ssr";
 import { Bell, Search, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export default function DashboardLayout({
   children,
@@ -25,15 +25,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const onClose = useCallback(() => setIsMobileSidebarOpen(false), []);
 
   return (
     <section className="flex h-screen">
       <Sidebar />
-      <MobileSidebar
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-      />
+      <MobileSidebar isOpen={isMobileSidebarOpen} onClose={onClose} />
       <section className="flex flex-col w-full">
         <header className="flex justify-between items-center p-3 border-b">
           <div className="flex gap-3 items-center">
@@ -41,7 +39,7 @@ export default function DashboardLayout({
               variant="outline"
               size="icon"
               className="rounded-3xl lg:hidden"
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
             >
               <List size={18} />
             </Button>
