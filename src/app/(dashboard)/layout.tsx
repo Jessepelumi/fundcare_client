@@ -29,7 +29,7 @@ export default function DashboardLayout({
   const onClose = useCallback(() => setIsMobileSidebarOpen(false), []);
 
   return (
-    <section className="flex h-screen">
+    <section className="flex h-dvh">
       <Sidebar />
       <MobileSidebar isOpen={isMobileSidebarOpen} onClose={onClose} />
       <section className="flex flex-col w-full">

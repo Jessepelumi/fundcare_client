@@ -18,7 +18,7 @@ import { usePathname } from "next/navigation";
 
 export const Sidebar = () => {
   return (
-    <section className="hidden h-screen w-1/5 px-5 py-10 border-r lg:flex flex-col justify-between">
+    <section className="hidden h-dvh w-1/5 px-5 py-10 border-r lg:flex flex-col justify-between">
       <div>
         <div className="flex items-center gap-2 pb-10">
           <Image
@@ -101,7 +101,7 @@ export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
   return (
     <section
       ref={sidebarRef}
-      className={`block z-10 fixed bg-white border-r px-7 py-14 h-screen w-4/5 max-w-xs lg:hidden ${
+      className={`block z-10 fixed bg-white border-r px-7 py-14 h-dvh w-4/5 max-w-xs lg:hidden ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } transform transition-transform duration-300`}
     >
