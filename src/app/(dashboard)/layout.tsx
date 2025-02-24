@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { List } from "@phosphor-icons/react/dist/ssr";
 import { Bell, Search, ChevronDown } from "lucide-react";
+import Link from "next/link";
 import { useCallback, useState } from "react";
 
 export default function DashboardLayout({
@@ -58,10 +59,7 @@ export default function DashboardLayout({
 
             <DropdownMenu onOpenChange={(open) => setIsDropdownOpen(open)}>
               <DropdownMenuTrigger asChild className="ring-0 outline-none">
-                <Button
-                  variant="outline"
-                  className="rounded-3xl px-2 focus-visible:border-green-500"
-                >
+                <Button variant="outline" className="rounded-3xl px-2">
                   <div className="h-6 w-6 bg-gray-400 rounded-3xl"></div>
                   <ChevronDown
                     size={18}
@@ -73,7 +71,7 @@ export default function DashboardLayout({
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuLabel className="!text-mm">
-                  Manage Account
+                  Account
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
@@ -108,10 +106,7 @@ export default function DashboardLayout({
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="!text-mm">
-                  Settings
-                </DropdownMenuItem>
-                <DropdownMenuItem className="!text-mm">
-                  Support
+                  <Link href="/settings">Settings</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="!text-mm text-red-500">
