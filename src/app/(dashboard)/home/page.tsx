@@ -1,24 +1,19 @@
 import CampaignCard from "@/components/custom/campaignCard";
+import HeaderBanner from "@/components/custom/headerBanner";
 import LeaderboardTile from "@/components/custom/leaderboardTile";
 import OverviewCard from "@/components/custom/overviewCard";
 import { Button } from "@/components/ui/button";
-import { CaretRight, Plus, X } from "@phosphor-icons/react/dist/ssr";
+import { CaretRight, Plus} from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
   return (
     <section className="flex flex-col h-full w-full overflow-scroll">
-      <header className="flex justify-between rounded-xl p-3 bg-campaign-background bg-cover">
-        <div>
-          <div className="flex gap-3 items-center">
-            <span className="!text-mm text-white">Explore Campaigns</span>
-            <CaretRight size={14} weight="bold" className="text-white" />
-          </div>
-          <h2 className="text-lg text-white">
-            Discover Life-Changing Campaigns
-          </h2>
-        </div>
-        <X />
-      </header>
+      <HeaderBanner
+        backgroundImage="/images/campaigns.png"
+        title="Discover Life-Changing Campaigns"
+        link="Explore Campaigns"
+        href="/"
+      />
       <div className="pb-4"></div>
 
       <div className="lg:flex justify-between items-end pb-5">

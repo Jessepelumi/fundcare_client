@@ -1,28 +1,18 @@
 import FeedCard from "@/components/custom/feedCard";
+import HeaderBanner from "@/components/custom/headerBanner";
 import QuickFilter from "@/components/custom/quickFilter";
 import TrendingCampaignTile from "@/components/custom/trendingCampaignTile";
 import { Button } from "@/components/ui/button";
-import {
-  CaretRight,
-  Plus,
-  X,
-} from "@phosphor-icons/react/dist/ssr";
+import { CaretRight, Plus } from "@phosphor-icons/react/dist/ssr";
 
 export default function Community() {
   return (
     <section className="flex flex-col h-full w-full overflow-scroll">
-      <header className="flex justify-between rounded-xl p-3 bg-community-background bg-cover bg-bottom">
-        <div>
-          <h2 className="text-lg text-white">
-            Join the Conversation and Make an Impact
-          </h2>
-          <p className="!text-mm text-white">
-            Connect with fellow donors, organizations, and professionals
-            dedicated to supporting health causes.
-          </p>
-        </div>
-        <X color="white" />
-      </header>
+      <HeaderBanner
+        backgroundImage="/images/community.png"
+        title="Join the Conversation and Make an Impact"
+        subtitle="Connect with fellow donors, organizations, and professionals dedicated to supporting health causes."
+      />
       <div className="pb-4"></div>
 
       <div className="lg:flex justify-between items-end pb-5">
