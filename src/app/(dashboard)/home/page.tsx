@@ -3,7 +3,7 @@ import HeaderBanner from "@/components/custom/headerBanner";
 import LeaderboardTile from "@/components/custom/leaderboardTile";
 import OverviewCard from "@/components/custom/overviewCard";
 import { Button } from "@/components/ui/button";
-import { CaretRight, Plus} from "@phosphor-icons/react/dist/ssr";
+import { CaretRight, Plus } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
   return (
@@ -13,8 +13,8 @@ export default function Home() {
         title="Discover Life-Changing Campaigns"
         link="Explore Campaigns"
         href="/"
+        color="black"
       />
-      <div className="pb-4"></div>
 
       <div className="lg:flex justify-between items-end pb-5">
         <div>

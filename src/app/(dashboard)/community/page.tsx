@@ -12,8 +12,8 @@ export default function Community() {
         backgroundImage="/images/community.png"
         title="Join the Conversation and Make an Impact"
         subtitle="Connect with fellow donors, organizations, and professionals dedicated to supporting health causes."
+        color="white"
       />
-      <div className="pb-4"></div>
 
       <div className="lg:flex justify-between items-end pb-5">
         <div>
